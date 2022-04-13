@@ -1,4 +1,6 @@
 import { createCanvas } from 'canvas';
+import { resolve } from "path";
+const registerFont = require("canvas").registerFont;
 
 const wrapText = (
   context,
@@ -33,6 +35,10 @@ export default async (req, res) => {
   const canvas = createCanvas(WIDTH, HEIGHT);
   const ctx = canvas.getContext('2d');
   const { text } = req.body;
+
+  registerFont(resolve("./fonts/NotoSansJP-Regular.otf"), {
+    family: "NotoSans",
+  });
 
   ctx.font = '70px NotoSans';
   ctx.fillStyle = "#000000";
