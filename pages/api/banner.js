@@ -40,6 +40,8 @@ export default async (req, res) => {
     family: "NotoSans",
   });
 
+  ctx.fillStyle = "#FFFFFF";
+  ctx.fillRect(0, 0, WIDTH, HEIGHT);
   ctx.font = '70px NotoSans';
   ctx.fillStyle = "#000000";
   ctx.textAlign = "center";
